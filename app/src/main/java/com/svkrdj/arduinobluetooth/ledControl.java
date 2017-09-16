@@ -1,7 +1,9 @@
 package com.svkrdj.arduinobluetooth;
 
 import android.app.ProgressDialog;
+import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
@@ -291,5 +293,4 @@ public class ledControl extends AppCompatActivity {
             progress.dismiss();
         }
     }
-
 }

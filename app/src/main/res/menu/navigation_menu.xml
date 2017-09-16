@@ -2,9 +2,9 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/nav_account"
-        android:title="My account"/>
+        android:title="About us"/>
     <item android:id="@+id/nav_settings"
-        android:title="Settings"/>
+        android:title="Rate the app"/>
     <item android:id="@+id/nav_logout"
-        android:title="Logout"/>
+        android:title="Exit"/>
 </menu>

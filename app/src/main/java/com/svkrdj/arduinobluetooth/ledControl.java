@@ -50,7 +50,7 @@ public class ledControl extends AppCompatActivity {
         public void onChop() {
             transmission("4");
             v.vibrate(100);
-            Toast.makeText(getApplicationContext(), "Chop", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Choped", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -60,7 +60,7 @@ public class ledControl extends AppCompatActivity {
         public void onWristTwist() {
             transmission("5");
             v.vibrate(100);
-            Toast.makeText(getApplicationContext(), "Wrist", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Wristed", Toast.LENGTH_SHORT).show();
 
         }
     };

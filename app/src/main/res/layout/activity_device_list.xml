@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.svkrdj.arduinobluetooth.DeviceList">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="#e75238"
+        android:elevation="1dp"
+        android:text="Load Devices"
+        android:layout_margin="10dp"/>
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paired Devices"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="0.56"
+        android:id="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:textIsSelectable="false" />
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="200sp"
+        android:verticalScrollbarPosition="right"
+        android:id="@+id/listView"
+        android:layout_weight="1"
+        android:layout_below="@+id/textView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available Devices"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/textView2"
+            android:layout_weight="0.46"
+            android:textIsSelectable="false" />
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="200sp"
+            android:verticalScrollbarPosition="right"
+            android:id="@+id/listView2"
+            android:layout_weight="1"
+            android:layout_below="@+id/textView"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.svkrdj.arduinobluetooth.ledControl"
+    android:background="@color/primary_color">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:text="Instruction:\n Chop horizontally to send '4' to Arduino \n WristTwist to send '5' to arduino"
+        android:layout_marginTop="70dp"
+        android:textColor="#9E9E9E"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

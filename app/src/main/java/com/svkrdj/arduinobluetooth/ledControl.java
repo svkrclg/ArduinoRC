@@ -41,7 +41,6 @@ public class ledControl extends AppCompatActivity {
     private Toolbar mToolbar;
     String address = null;
     TextView Discnt;
-    SeekBar simpleSeekBar;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -282,7 +281,7 @@ public class ledControl extends AppCompatActivity {
 
             if (!ConnectSuccess)
             {
-                msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
+                msg("Connection Failed.");
                 finish();
             }
             else

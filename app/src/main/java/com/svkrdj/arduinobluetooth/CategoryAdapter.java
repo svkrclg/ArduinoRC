@@ -28,8 +28,10 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             return new ThroughSwitch();
-        } else {
+        } else if(position==1) {
             return new ThroughSensor();
+        } else {
+            return new ThroughButtons();
         }
     }
 
@@ -45,8 +47,11 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return mContext.getString(R.string.Switch);
-        } else {
+        } else if(position==1){
             return mContext.getString(R.string.Sensor);
+        }
+        else {
+            return  "Buttons";
         }
     }
 }

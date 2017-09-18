@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/image"
         android:scaleType="fitXY"
         android:rotation="90"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="11dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <ImageButton
@@ -62,9 +62,9 @@
         app:srcCompat="@drawable/image"
         android:scaleType="fitXY"
         android:rotation="90"
+        android:layout_marginTop="112dp"
         android:layout_below="@+id/B"
-        android:layout_toEndOf="@+id/T"
-        android:layout_marginTop="128dp" />
+        android:layout_toEndOf="@+id/T" />
 
     <ImageButton
         android:id="@+id/S"
@@ -74,7 +74,7 @@
         android:scaleType="fitXY"
         android:rotation="90"
         android:layout_above="@+id/X"
-        android:layout_toStartOf="@+id/X" />
+        android:layout_toStartOf="@+id/T" />
     <ImageButton
         android:id="@+id/T"
         android:layout_width="60dp"

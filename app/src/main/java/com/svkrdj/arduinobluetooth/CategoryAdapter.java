@@ -41,7 +41,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
     @Override
     public CharSequence getPageTitle(int position) {
@@ -51,7 +51,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
             return mContext.getString(R.string.Sensor);
         }
         else {
-            return  "Buttons";
+            return mContext.getString(R.string.Buttons);
         }
     }
 }

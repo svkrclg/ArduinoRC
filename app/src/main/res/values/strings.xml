@@ -6,6 +6,7 @@
 
     <string name="Switch">Switch</string>
     <string name="Sensor">Sensor</string>
+    <string name="Buttons">Buttons</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

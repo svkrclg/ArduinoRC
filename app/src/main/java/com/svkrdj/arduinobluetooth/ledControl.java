@@ -7,20 +7,23 @@ import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +36,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class ledControl extends AppCompatActivity {
+public class ledControl extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     // Button btnOn, btnOff, btnDis;
     private DrawerLayout mDrawerLayout;
@@ -42,6 +45,7 @@ public class ledControl extends AppCompatActivity {
     private Toolbar mToolbar;
     String address = null;
     TextView Discnt;
+    NavigationView nav_view;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -92,10 +96,11 @@ public class ledControl extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         Discnt = (TextView) findViewById(R.id.discnt);
+        nav_view=(NavigationView) findViewById(R.id.nav_view);
         s2=(Switch)findViewById(R.id.switch2);
         s1=(Switch) findViewById(R.id.switch1);
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
+        nav_view.setNavigationItemSelectedListener(this);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -124,9 +129,6 @@ public class ledControl extends AppCompatActivity {
             }
         });
 
-
-
-
         new ConnectBT().execute();
         Discnt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,9 +146,47 @@ public class ledControl extends AppCompatActivity {
                 finish(); //return to the first layout
             }
         });
+    }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.about) {
+              Intent i=new Intent(this, about.class);
+              startActivity(i);
+        } else if (id == R.id.exit)
+        {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("Exit Application?");
+            alertDialogBuilder
+                    .setMessage("Click yes to exit!")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    moveTaskToBack(true);
+                                    android.os.Process.killProcess(android.os.Process.myPid());
+                                    System.exit(1);
+                                }
+                            })
 
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+
+        } else if (id == R.id.rate) {
+            //do something
+        }
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
     public void game(View v)
     {
@@ -225,6 +265,7 @@ public class ledControl extends AppCompatActivity {
             try
             {
                 btSocket.getOutputStream().write(value.toString().getBytes());
+                msg("Sent");
             }
             catch (IOException e)
             {

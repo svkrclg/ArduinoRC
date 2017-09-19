@@ -15,6 +15,7 @@
         android:scaleType="fitXY"
         android:rotation="90"
         android:src="@drawable/left"
+        android:onClick="game"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <ImageView
@@ -23,6 +24,7 @@
         android:layout_height="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/left"
+        android:onClick="game"
         android:layout_below="@+id/left"
         android:layout_toStartOf="@+id/left" />
     <ImageView
@@ -39,6 +41,7 @@
         android:id="@+id/up"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:onClick="game"
         android:scaleType="fitXY"
         android:rotation="180"
         android:src="@drawable/left"
@@ -51,6 +54,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/x"
         android:rotation="90"
+        android:onClick="game"
         android:layout_marginTop="41dp"
         android:layout_below="@+id/right"
         android:layout_alignStart="@+id/right" />
@@ -61,6 +65,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/y"
         android:rotation="90"
+        android:onClick="game"
         android:layout_below="@+id/x"
         android:layout_toEndOf="@+id/x" />
     <ImageView
@@ -70,6 +75,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/a"
         android:rotation="90"
+        android:onClick="game"
         android:layout_below="@+id/x"
         android:layout_toStartOf="@+id/x" />
     <ImageView
@@ -78,6 +84,7 @@
         android:layout_height="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/b"
+        android:onClick="game"
         android:rotation="90"
         android:layout_below="@+id/a"
         android:layout_toEndOf="@+id/a" />

@@ -7,13 +7,78 @@
     tools:context="com.svkrdj.arduinobluetooth.ledControl"
     android:background="@color/primary_color">
 
-<ImageButton
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:src="@drawable/left-arrow"
-    android:scaleType="fitXY"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="15dp" />
-
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:rotation="90"
+        android:src="@drawable/left"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/left"
+        android:layout_below="@+id/left"
+        android:layout_toStartOf="@+id/left" />
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/left"
+        android:rotation="-90"
+        android:onClick="game"
+        android:layout_below="@+id/down"
+        android:layout_toEndOf="@+id/down" />
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:rotation="180"
+        android:src="@drawable/left"
+        android:layout_below="@+id/left"
+        android:layout_toEndOf="@+id/right" />
+    <ImageView
+        android:id="@+id/x"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/x"
+        android:rotation="90"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/right"
+        android:layout_alignStart="@+id/right" />
+    <ImageView
+        android:id="@+id/y"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/y"
+        android:rotation="90"
+        android:layout_below="@+id/x"
+        android:layout_toEndOf="@+id/x" />
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/a"
+        android:rotation="90"
+        android:layout_below="@+id/x"
+        android:layout_toStartOf="@+id/x" />
+    <ImageView
+        android:id="@+id/b"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/b"
+        android:rotation="90"
+        android:layout_below="@+id/a"
+        android:layout_toEndOf="@+id/a" />
 </RelativeLayout>

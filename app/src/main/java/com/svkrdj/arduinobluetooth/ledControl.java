@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -125,6 +126,7 @@ public class ledControl extends AppCompatActivity {
 
 
 
+
         new ConnectBT().execute();
         Discnt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +147,29 @@ public class ledControl extends AppCompatActivity {
 
 
 
+    }
+    public void game(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.a:   transmission("a");
+                break;
+            case R.id.x:   transmission("x");
+                break;
+            case R.id.y:   transmission("y");
+                break;
+            case R.id.b:   transmission("b");
+                break;
+            case R.id.up:   transmission("u");
+                break;
+            case R.id.down:   transmission("d");
+                break;
+            case R.id.right:   transmission("r");
+                break;
+            case R.id.left:   transmission("l");
+                break;
+
+        }
     }
     public void s1call(View v){
         //Get reference of TextView from XML layout

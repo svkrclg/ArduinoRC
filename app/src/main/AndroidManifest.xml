@@ -30,6 +30,7 @@
         </activity>
         <activity
             android:name="com.svkrdj.arduinobluetooth.ledControl"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
     </application>

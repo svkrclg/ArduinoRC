@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/nav_account"
+    <item android:id="@+id/about"
+        android:icon="@mipmap/ic_info_black_24dp"
+        android:onClick="about"
         android:title="About us" />
-    <item android:id="@+id/nav_settings"
+    <item android:id="@+id/rate"
+        android:onClick="rate"
+        android:icon="@mipmap/ic_star_rate_black_18dp"
         android:title="Rate the app"/>
-    <item android:id="@+id/nav_logout"
+    <item android:id="@+id/exit"
+        android:icon="@mipmap/ic_backspace_black_24dp"
+        android:onClick="exit"
         android:title="Exit"/>
 </menu>

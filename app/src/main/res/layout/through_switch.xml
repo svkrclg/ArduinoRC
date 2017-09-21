@@ -10,9 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_above="@+id/discnt"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <Switch
             android:id="@+id/switch1"
@@ -34,6 +33,25 @@
             android:textSize="30dp"
             android:fontFamily="casual" />
         <Switch
+            android:id="@+id/switch3"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#616161"
+            android:checked="false"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#F5F5F5"
+            android:switchMinWidth="50dp"
+            android:paddingRight="10dp"
+            android:text="BULB 1"
+            android:paddingLeft="10dp"
+            android:visibility="visible"
+            tools:checked="false"
+            android:onClick="s3call"
+            android:textSize="30dp"
+            android:fontFamily="casual" />
+        <Switch
             android:id="@+id/switch2"
             android:paddingRight="10dp"
             android:layout_marginTop="20dp"
@@ -52,6 +70,47 @@
             android:onClick="s2call"
             android:textSize="30dp"
             android:fontFamily="casual" />
+
+        <Switch
+            android:id="@+id/switch4"
+            android:paddingRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#616161"
+            android:checked="false"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="10dp"
+            android:textColor="#F5F5F5"
+            android:switchMinWidth="50dp"
+            android:text="BULB 2"
+            android:visibility="visible"
+            tools:checked="false"
+            android:onClick="s4call"
+            android:textSize="30dp"
+            android:fontFamily="casual" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#616161"
+            android:fontFamily="casual"
+            android:text="Fan regulator"
+            android:textColor="#f5f5f5"
+            android:textSize="18sp" />
+        <SeekBar
+            android:layout_width="200dp"
+            android:thumbTint="@color/colorPrimaryDark"
+            android:layout_height="30dp"
+            android:max="4"
+            android:id="@+id/myseekbar"
+            android:progress="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -146,7 +146,6 @@ public class DeviceList extends Activity
         devicelist.setOnItemClickListener(myListClickListener); //Method called when the device from the list is clicked
 
     }
-
     private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener()
     {
         @Override

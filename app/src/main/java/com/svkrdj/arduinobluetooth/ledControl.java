@@ -24,6 +24,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,12 +46,13 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
     private Toolbar mToolbar;
     String address = null;
     TextView Discnt;
+    SeekBar mySeekBar;
     NavigationView nav_view;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
-    Switch s1,s2;
+    Switch s1,s2,s3,s4;
     ChopDetector.ChopListener chopListener = new ChopDetector.ChopListener() {
         @Override
         public void onChop() {
@@ -99,6 +101,9 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
         nav_view=(NavigationView) findViewById(R.id.nav_view);
         s2=(Switch)findViewById(R.id.switch2);
         s1=(Switch) findViewById(R.id.switch1);
+        s3=(Switch) findViewById(R.id.switch3);
+        s4=(Switch) findViewById(R.id.switch4);
+        myseekbar=(SeekBar) findViewById(R.id.myseekbar);
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         nav_view.setNavigationItemSelectedListener(this);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -144,6 +149,32 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
                     { msg("Error");}
                 }
                 finish(); //return to the first layout
+            }
+        });
+
+
+        mySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progressChangedValue = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if(progressChangedValue==0)
+                transmission("m");
+                else if(progressChangedValue==1)
+                    transmission("n");
+                else if(progressChangedValue==2)
+                    transmission("o");
+                else if(progressChangedValue==3)
+                    transmission("p");
+                else if(progressChangedValue==4)
+                    transmission("q");
             }
         });
     }
@@ -230,6 +261,34 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
         //Get reference of TextView from XML layout
 
         //Is the switch on?
+        boolean on = ((Switch) v).isChecked();
+
+        if(on)
+        {
+            transmission("4");
+        }
+        else
+        {
+            transmission("5");
+        }
+    }
+    public void s3call(View v){
+        //Get reference of TextView from XML layout
+
+        //Is the switch on?
+        boolean on = ((Switch) v).isChecked();
+
+        if(on)
+        {
+            transmission("6");
+        }
+        else
+        {
+            transmission("7");
+        }
+    }
+    public void s4call(View v){
+
         boolean on = ((Switch) v).isChecked();
 
         if(on)

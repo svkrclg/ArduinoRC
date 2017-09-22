@@ -46,7 +46,6 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
     private Toolbar mToolbar;
     String address = null;
     TextView Discnt;
-    SeekBar mySeekBar;
     NavigationView nav_view;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
@@ -103,7 +102,6 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
         s1=(Switch) findViewById(R.id.switch1);
         s3=(Switch) findViewById(R.id.switch3);
         s4=(Switch) findViewById(R.id.switch4);
-        myseekbar=(SeekBar) findViewById(R.id.myseekbar);
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         nav_view.setNavigationItemSelectedListener(this);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -153,31 +151,9 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
         });
 
 
-        mySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progressChangedValue = 0;
-
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progressChangedValue = progress;
-            }
-
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                if(progressChangedValue==0)
-                transmission("m");
-                else if(progressChangedValue==1)
-                    transmission("n");
-                else if(progressChangedValue==2)
-                    transmission("o");
-                else if(progressChangedValue==3)
-                    transmission("p");
-                else if(progressChangedValue==4)
-                    transmission("q");
-            }
-        });
+       // mySeekBar.setOnSeekBarChangeListener(new seek());
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -304,7 +280,7 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
     // fast way to call Toast
     private void msg(String s)
     {
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -317,7 +293,7 @@ public class ledControl extends AppCompatActivity implements NavigationView.OnNa
         return super.onOptionsItemSelected(item);
     }
 
-    private void transmission(String value)
+    public void transmission(String value)
     {
         if (btSocket!=null)
         {

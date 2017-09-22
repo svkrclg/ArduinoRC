@@ -109,6 +109,7 @@
             android:max="4"
             android:id="@+id/myseekbar"
             android:progress="1"
+            android:onClick="Seek"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
     </LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Arduino Bluetooth</string>
+    <string name="app_name">Arduino RC</string>
     <string name="action_settings">Settings</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>

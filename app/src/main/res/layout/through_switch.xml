@@ -91,27 +91,6 @@
             android:textSize="30dp"
             android:fontFamily="casual" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:background="#616161"
-            android:fontFamily="casual"
-            android:text="Fan regulator"
-            android:textColor="#f5f5f5"
-            android:textSize="18sp" />
-        <SeekBar
-            android:layout_width="200dp"
-            android:thumbTint="@color/colorPrimaryDark"
-            android:layout_height="30dp"
-            android:max="4"
-            android:id="@+id/myseekbar"
-            android:progress="1"
-            android:onClick="Seek"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
     </LinearLayout>
 
 </RelativeLayout>
